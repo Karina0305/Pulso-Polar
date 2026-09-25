@@ -1,0 +1,13 @@
+/* Navegación común al pie de las tres pantallas. */
+footer.navegacion-pantallas{position:relative;z-index:4;display:block;width:100%;min-height:76px;padding:14px 4vw;background:#071526;color:#fff600;font-family:Arial,sans-serif;flex-shrink:0}
+.navegacion-pantallas nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:48px;width:100%}
+.navegacion-pantallas a{display:grid;place-items:center;flex:none;width:54px;height:54px;padding:0;border-radius:50%;text-decoration:none;background:linear-gradient(115deg,#47efcea8,#12b8d3a8);border:2px solid rgba(255,255,255,.85);box-shadow:inset 0 0 12px #a1fffacc,0 0 14px #39fbd788}
+.navegacion-pantallas a .chev{display:block;width:13px;height:13px;border-top:4px solid #fff;border-right:4px solid #fff;border-radius:3px}
+.navegacion-pantallas a .chev.der{transform:rotate(45deg) translate(-1px,1px)}
+.navegacion-pantallas a .chev.izq{transform:rotate(-135deg) translate(-1px,1px)}
+.navegacion-pantallas a:hover{filter:brightness(1.15)}
+.navegacion-pantallas .nombre-pantalla{font-size:14px;font-weight:700;letter-spacing:.08em;text-align:center;line-height:1.5;text-transform:uppercase}
+.navegacion-pantallas button{font:inherit;font-size:18px;color:#fff600;background:#183148;border:1px solid #fff60066;border-radius:28px;padding:12px 22px;cursor:pointer}
+.navegacion-pantallas a:focus-visible,.navegacion-pantallas button:focus-visible{outline:2px solid white;outline-offset:5px}
+@media(max-width:700px){footer.navegacion-pantallas{padding:14px 20px}.navegacion-pantallas nav{flex-wrap:wrap;gap:12px 20px}.navegacion-pantallas .nombre-pantalla{order:-1;width:100%;font-size:12px}.navegacion-pantallas a{width:48px;height:48px}.navegacion-pantallas button{font-size:14px}.navegacion-pantallas button{padding:10px 14px}.navegacion-pantallas .pantalla-siguiente{margin-left:auto}}
+@media(max-width:400px){.navegacion-pantallas button{order:2;width:100%}}

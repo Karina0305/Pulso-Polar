@@ -1,0 +1,19 @@
+/* Se conservan las imágenes originales, sus curvas, colores y textura. */
+.inicio::before{background-image:url('../assets/noche-original.jpg');background-position:center}
+.cielo-fiel{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;isolation:isolate}
+.filtros-aurora{position:absolute}
+.marco-original{position:absolute;left:50%;top:50%;width:max(100vw,169.312169vh);height:max(100vh,59.0625vw);transform:translate(-50%,-50%);overflow:hidden;isolation:isolate}
+.base-original,.suelo-original{position:absolute;inset:0;width:100%;height:100%;display:block;max-width:none}
+.cielo-estrellas{position:absolute;inset:0;overflow:hidden;mask-image:linear-gradient(#000 0%,#000 14%,transparent 34%);-webkit-mask-image:linear-gradient(#000 0%,#000 14%,transparent 34%)}
+.cinta-estrellas{display:flex;width:200%;height:100%;animation:estrellas-originales 160s linear infinite;will-change:transform}
+.cinta-estrellas img{width:50%;height:100%;flex:none;max-width:none;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.aurora-original{position:absolute;inset:0;mix-blend-mode:multiply}
+.luz-original{position:absolute;inset:-2%;animation:luz-aurora-original 10s ease-in-out infinite}
+.aurora-original img{display:block;width:100%;height:100%;max-width:none;filter:url(#ondulacion-original);animation:subir-bajar-original 8s ease-in-out infinite;will-change:transform}
+.suelo-original{z-index:1}
+.cielo-pausado *{animation-play-state:paused!important}
+@keyframes estrellas-originales{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes subir-bajar-original{0%,100%{transform:translateY(1.8%) skewY(-.4deg)}50%{transform:translateY(-1.8%) skewY(.4deg)}}
+@keyframes luz-aurora-original{0%,100%{filter:brightness(1) saturate(1)}50%{filter:brightness(1.035) saturate(1.08)}}
+.fondo-control{position:fixed;right:18px;bottom:78px;z-index:5;border:1px solid #ffffff60;border-radius:24px;padding:9px 14px;color:#fff600;background:#191636c9;font:14px Arial,sans-serif;cursor:pointer}
+.fondo-control:focus-visible{outline:3px solid white;outline-offset:4px}

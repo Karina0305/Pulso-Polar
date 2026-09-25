@@ -1,0 +1,34 @@
+/* Cada escena ocupa el espacio disponible sobre la navegación. */
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{height:100dvh;min-height:0;display:block}
+body>main{position:absolute!important;left:50%;top:0;flex:none;transform-origin:top center;transform:translateX(-50%) scale(var(--escala-pantalla,1));width:var(--ancho-pantalla,100vw)!important;height:var(--alto-pantalla,820px)!important;min-height:0!important;max-width:none;margin:0!important;box-sizing:border-box}
+footer.navegacion-pantallas{position:fixed;bottom:0;left:0;min-height:64px;background:rgba(66,38,105,.45);backdrop-filter:blur(8px);padding:8px 4vw}
+.navegacion-pantallas button{background:rgba(71,43,105,.4)}
+body>main.portada{display:flex;flex-direction:row;align-items:center;padding:35px 6%;gap:0}
+.portada .introduccion{width:46%;padding:28px;order:0}
+.portada .introduccion h1{font-size:44px;margin:18px 0 24px}
+.portada .texto-principal{font-size:22px}
+.portada .invitacion{font-size:17px;margin-top:22px}
+.portada .marca{position:absolute;left:54%;top:50%;transform:translateY(-50%) rotate(-3deg);font-size:80px;margin:0;order:0}
+body>main.lienzo-original{display:block;aspect-ratio:auto;padding:0;overflow:hidden}
+.lienzo-original .texto-sonoro{position:absolute;font-size:16px}
+.lienzo-original .interaccion-sonora{left:20px;top:4%;right:auto;width:43%;padding:20px 28px;margin:0}
+.lienzo-original .onda-sonora{position:absolute;left:0;top:24%;width:100%;height:47%;margin:0}
+.lienzo-original .controles-sonoros{right:3%;bottom:2%;top:auto;left:auto;width:56%;padding:0;font-size:14px}
+.lienzo-original .cabecera-control{grid-template-columns:43% 57%;padding:16px}
+.lienzo-original .botones-control button{font-size:13px;padding:10px;min-height:40px}
+.lienzo-original .datos-control .pulso-resumen{font-size:14px}
+.lienzo-original .apartados-control{min-height:0;padding:16px}
+.lienzo-original .explicacion-panel{font-size:16px;margin-bottom:12px}
+.lienzo-original .apartado-control{padding:8px}
+.lienzo-original #mostrar-interaccion{position:absolute;left:20px;top:4%}
+body>main:has(.vista-polar){display:grid;place-items:center;overflow:hidden}
+.vista-polar,.vista-polar.oscura{width:100%;height:100%;max-width:none;min-height:0;aspect-ratio:auto}
+.vista-polar>img{object-fit:fill}
+.reflexion-polar{top:5.4%;left:3.7%;width:92.6%;padding:5% 5% 4%;min-height:0;max-height:none}
+.reflexion-polar h2{font-size:6.8cqw}
+.reflexion-principal{font-size:2.05cqw}
+.reflexion-cierre{font-size:1.95cqw;margin-top:2.7cqw}
+
+footer.navegacion-pantallas{background:rgba(66,38,105,.35);backdrop-filter:none;-webkit-backdrop-filter:none}
+

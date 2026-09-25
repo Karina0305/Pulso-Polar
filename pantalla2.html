@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pulso Polar: auroras y actividad geomagnética.">
+  <title>Pulso Polar · Pantalla 2</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pantalla2.css?v=ocultar-8">
+  <script src="js/script.js?v=energia-2" defer></script><script src="js/fondo-pantalla2.js?v=cristal-8" defer></script><script src="js/polos.js?v=hemi-1" defer></script><script src="js/aurora-kp.js?v=touch-2" defer></script>
+  <link rel="stylesheet" href="css/particulas.css?v=6">
+  <script src="js/particulas.js?v=6" defer></script>
+<script src="js/instrucciones.js" defer></script><link rel="stylesheet" href="https://use.typekit.net/yvz3son.css">
+<link rel="stylesheet" href="css/tipografia.css?v=century-4"><link rel="stylesheet" href="css/navegacion.css?v=3"><link rel="stylesheet" href="css/pantallas-fijas.css?v=3"><script defer src="js/pantallas-fijas.js?v=1"></script><link rel="stylesheet" href="css/pantalla2-cristal.css?v=10"><link rel="stylesheet" href="css/barra-cristal.css?v=1"></head>
+<body class="pantalla-original">
+  <main class="lienzo-original" aria-label="Pulso Polar: segunda pantalla">
+    <div class="fondo-sonoro" aria-hidden="true"></div>
+    <div class="tierra-polos" id="tierra-polos"><img src="assets/tierra-polos.png" alt="Tierra orientada hacia el polo sur" id="imagen-polos"></div><section class="selector-polos" aria-label="Seleccionar polo"><p id="polo-actual" role="status">Polo sur · aurora austral</p><button type="button" id="cambiar-polo">Ver polo norte ↻</button></section>
+    <div id="apartado-camara" class="apartado-control camara-preview" role="region" aria-label="Vista de la cámara" hidden><video id="video" autoplay muted playsinline hidden></video><p>Tu movimiento altera la forma, el color y el ritmo. La cámara no graba ni utiliza micrófono.</p></div>
+    <h1 class="solo-lectores">El pulso geomagnético</h1>
+    
+    <div class="onda-sonora"><canvas id="aurora" data-polo="sur" aria-label="Aurora austral animada que responde al Kp y al movimiento"></canvas></div>
+    <button id="mostrar-interaccion" type="button" aria-controls="instrucciones-interaccion" aria-expanded="false" hidden>Mostrar instrucciones</button><section id="instrucciones-interaccion" class="texto-sonoro interaccion-sonora"><button id="ocultar-interaccion" type="button" aria-controls="instrucciones-interaccion" aria-expanded="true" aria-label="Ocultar instrucciones" title="Ocultar instrucciones"><span aria-hidden="true">×</span></button><p><span class="titulo-interaccion">Cómo funciona</span><br>El Kp (escala 0–9) mide la energía que el viento solar transfiere al campo magnético terrestre: a mayor energía, más rápido y fuerte late la onda, y el óvalo auroral se expande hacia latitudes menores — por eso la aurora se vuelve visible.</p></section>
+    <section class="controles-sonoros texto-sonoro" aria-label="Control de la aurora">
+      <div class="cabecera-control">
+        <p id="modo" class="modo-sonoro">CONSULTANDO NOAA</p><div class="datos-control">
+          <div class="pulso-resumen"><span id="heart" aria-hidden="true">♥</span><span>Kp <strong id="kp-value">—</strong> · <span id="kp-label">—</span> · <strong id="bpm-value">—</strong> BPM<br><span id="energy-value">Energía del pulso: cargando…</span><br>Polo <strong id="polo-value">sur</strong> · movimiento <span id="motion-level">0%</span><span id="last-update">—</span></span></div>
+        </div>
+        <div class="botones-control"><div class="acciones-sonoras"><button id="start-camera" type="button">Activar cámara</button><button id="stop-camera" type="button">Detener cámara</button></div><p id="camera-status" role="status">Cámara apagada. El Kp controla la onda.</p>
+          <div class="acciones-sonoras"><button id="manual-toggle" type="button" aria-pressed="false" aria-expanded="false" aria-controls="apartado-manual">Prueba manual</button><button id="live-main" type="button">Regresar a NOAA</button></div>
+        </div>
+      </div>
+      <div class="apartados-control"><p class="explicacion-panel">Toca, arrastra o usa la cámara: la onda responde a ti. Al soltar, vuelve al ritmo real del Kp.</p>
+        <div id="apartado-manual" class="apartado-control" hidden><label for="kp-test">Probar Kp <output id="test-value">3</output></label><input id="kp-test" type="range" min="0" max="9" step="1" value="3"></div>
+        
+        <div id="apartado-volumen" class="apartado-control" hidden><label class="volumen-latidos" for="volume">Volumen de latidos <input id="volume" type="range" min="0" max="1" step="0.05" value="0.85"><output id="volume-value">85%</output></label></div>
+      </div>
+      <div class="extras-control"><button id="sound-toggle" type="button" aria-pressed="false" aria-controls="apartado-volumen">Silenciar latidos</button><span id="sound-status" role="status"></span></div><canvas id="canvas" hidden></canvas>
+    </section>
+    
+  </main>
+<footer class="navegacion-pantallas"><nav aria-label="Navegación entre pantallas"><a href="index.html" aria-label="Ir a Inicio"><span class="chev izq" aria-hidden="true"></span></a><span class="nombre-pantalla">02 · Siente el pulso</span><a class="pantalla-siguiente" href="pantalla3.html" aria-label="Ir a Pantalla 03"><span class="chev der" aria-hidden="true"></span></a></nav></footer>
+  <dialog id="detalle-datos" aria-labelledby="datos-titulo">
+    <button type="button" id="cerrar-datos" class="cerrar" aria-label="Cerrar datos">×</button>
+    <section class="datos panel">
+      <h2 id="datos-titulo">Actividad geomagnética</h2>
+      <dl><div><dt>Kp actual:</dt><dd id="kp">—</dd></div><div><dt>Ritmo:</dt><dd id="ritmo">—</dd></div><div><dt>Color:</dt><dd id="color">—</dd></div><div><dt>Energía del pulso:</dt><dd id="hpi">Sin datos</dd></div><div><dt>Registro:</dt><dd id="fecha">—</dd></div></dl>
+      <p class="fuente">Fuente: <a href="https://www.swpc.noaa.gov/products/planetary-k-index" target="_blank" rel="noopener noreferrer">NOAA SWPC ↗</a></p>
+      <p id="estado" class="estado" role="status">Consultando el último registro…</p>
+      <button id="actualizar" class="boton" type="button">Actualizar datos</button>
+    </section>
+    <div class="latido" id="latido" aria-hidden="true"><svg viewBox="0 0 100 100" class="corazon"><path d="M50 87C42 79 9 56 9 32C9 9 38 4 50 25C62 4 91 9 91 32C91 56 58 79 50 87Z"/></svg></div>
+    <div class="lectura"><span id="lectura">Esperando datos</span><button type="button" id="pausar" class="enlace-texto" aria-pressed="false">Pausar animación</button></div>
+    <section class="simulador panel" aria-labelledby="simular-titulo">
+      <h2 id="simular-titulo">Prueba distintos niveles</h2>
+      <label for="simular">Simular Kp <output id="valor-simulacion" for="simular">3</output></label>
+      <input id="simular" type="range" min="0" max="9" value="3" step="0.01">
+      <p>La simulación es una interpretación artística; no garantiza la visibilidad de auroras.</p>
+      <button class="boton" type="button" id="en-vivo">Volver a datos NOAA</button>
+    </section>
+  </dialog>
+  <script>
+    const detalle = document.getElementById('detalle-datos');
+    document.getElementById('abrir-datos')?.addEventListener('click', () => detalle.showModal());
+    document.getElementById('cerrar-datos').addEventListener('click', () => detalle.close());
+    detalle.addEventListener('click', event => { if (event.target === detalle) { const r = detalle.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) detalle.close(); } });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

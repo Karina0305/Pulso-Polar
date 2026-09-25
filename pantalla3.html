@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pulso Polar · Auroras sobre la Tierra</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="css/pantalla3.css?v=color-dodge-3"><script defer src="js/pantalla3.js?v=7"></script><script defer src="js/oscurecer.js?v=reflexion-4"></script><link rel="stylesheet" href="https://use.typekit.net/yvz3son.css">
+<link rel="stylesheet" href="css/tipografia.css?v=century-4"><link rel="stylesheet" href="css/navegacion.css?v=3"><link rel="stylesheet" href="css/pantallas-fijas.css?v=3"><script defer src="js/pantallas-fijas.js?v=2"></script><link rel="stylesheet" href="css/barra-cristal.css?v=1"><link rel="stylesheet" href="css/recuadros-luz.css?v=14"><style>
+/* Refuerzo P3: recuadro igual P1 + título referencia + botón tipo P2 */
+.vista-polar .reflexion-fondo{display:none!important}
+.vista-polar .reflexion-polar{left:auto!important;right:3.5%!important;top:12%!important;width:42%!important;height:auto!important;min-height:0!important;max-height:84%!important;overflow:auto!important;padding:30px 32px!important;mix-blend-mode:normal!important;border-radius:28px!important;background:radial-gradient(ellipse at 0% 20%,rgba(50,156,237,.28),transparent 50%),radial-gradient(ellipse at 75% 85%,rgba(219,83,255,.3),transparent 55%),linear-gradient(110deg,rgba(39,39,114,.64),rgba(91,38,153,.43))!important;box-shadow:inset 0 0 20px #93bcff44,0 0 8px #b1fcff99,0 0 24px #8168ff88!important}
+.vista-polar .reflexion-polar h2{font-family:"eskorte-latin",Georgia,serif!important;font-weight:700!important;font-style:italic!important;color:#fff!important;font-size:3.4cqw!important;line-height:.85!important;letter-spacing:-.03em!important;margin:0 0 1.2cqw!important;padding:0!important}
+.vista-polar .reflexion-polar h2 .ys{font-size:1.18em!important;display:block!important;line-height:.88!important;margin:0!important;padding:0!important}
+.vista-polar .reflexion-polar h2 .cm{font-size:1.18em!important;display:block!important;line-height:.88!important;margin:0!important;padding:0!important}
+.vista-polar .reflexion-polar .reflexion-principal{text-wrap:pretty!important;widows:4!important;orphans:4!important;font-size:1.32cqw!important;line-height:1.62!important;letter-spacing:.005em!important}
+.vista-polar .reflexion-polar .reflexion-pregunta{font-family:"eskorte-latin",Georgia,serif!important;font-style:italic!important;font-weight:700!important;font-size:2.3cqw!important;letter-spacing:-.015em!important;line-height:1.2!important;white-space:nowrap!important;margin:1.6cqw 0 0!important;color:#fff600!important}
+.vista-polar .reflexion-polar.secundaria{left:3.5%!important;right:auto!important}
+.vista-polar .botones-polar{position:absolute!important;z-index:6!important;top:2.5%!important;right:3.5%!important;display:flex!important;gap:12px!important}
+.vista-polar .botones-polar button{background:linear-gradient(110deg,#6652e7bb,#873ce0aa)!important;border:1px solid #d9ddffdf!important;border-radius:19px!important;color:#fff!important;box-shadow:inset 0 0 14px #dacaffbb,0 0 15px #b075ff88!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;width:230px!important}
+.vista-polar .botones-polar button::before{display:none!important}
+</style></head>
+<body><main><h1 class="sr-only">Auroras sobre la Tierra</h1><div class="vista-polar"><div class="botones-polar"><button id="oscurecer" type="button" aria-pressed="false">Oscurecer pantalla</button><button id="recuadro-dos" type="button" aria-pressed="false" aria-controls="reflexion-dos">Proceso</button></div><img src="assets/pantalla3-tierra.jpg" alt="Dos vistas de la Tierra en tonos azules, con regiones polares iluminadas"><canvas id="auroras-polares" aria-label="Auroras verdes, turquesas y rosas que ondulan sobre las regiones polares"></canvas><img class="imagen-oscura" src="assets/pantalla3-oscura.png" alt="" aria-hidden="true"><div class="reflexion-fondo" aria-hidden="true"></div><section class="reflexion-polar" id="reflexion-polar" aria-labelledby="reflexion-titulo" hidden>
+<h2 id="reflexion-titulo"><span class="ys">¿Y si desapareciera</span><span class="cm">el campo magnético?</span></h2>
+<p class="reflexion-principal">Si la Tierra no tuviera campo magnético, el viento solar golpearía directamente nuestra atmósfera. Con el tiempo, se llevaría gran parte del aire y del agua, y la radiación del sol llegaría sin filtro a la superficie. Las auroras desaparecerían, pero eso sería lo de menos: la vida tal como la conocemos no podría sostenerse. Marte es un recordatorio de lo que pasa cuando un&nbsp;planeta&nbsp;pierde&nbsp;ese&nbsp;escudo.</p>
+<p class="reflexion-cierre">Lo invisible sostiene nuestra vida diaria: el campo magnético, como otras fuerzas esenciales, nos recuerda el valor de aquello que protege y sostiene el mundo sin que lo notemos.</p>
+</section>
+<section class="reflexion-polar secundaria" id="reflexion-dos" aria-labelledby="reflexion-dos-titulo" hidden>
+<h2 id="reflexion-dos-titulo"><span class="ys">Proceso</span></h2>
+<p class="reflexion-principal">El Kp es un signo: el pulso que se ve, la perturbación geomagnética que representa, y la protección planetaria que sugiere. Se acotó el fenómeno a los polos y se eligió NOAA como fuente verificable, partiendo de una idea simple: si el Kp se traduce como latido, el escudo invisible de la Tierra se vuelve algo que se puede sentir, no solo medir. La metáfora tradujo el dato en pulso, y el concepto se volvió pregunta:</p>
+<p class="reflexion-pregunta">¿Qué pasa si ese pulso se detiene?</p>
+</section></div></main>
+<footer class="navegacion-pantallas"><nav aria-label="Navegación entre pantallas"><a href="pantalla2.html" aria-label="Ir a Pantalla 02"><span class="chev izq" aria-hidden="true"></span></a><span class="nombre-pantalla">03 · El pulso que nos protege</span><a class="pantalla-siguiente" href="index.html" aria-label="Ir a Inicio"><span class="chev der" aria-hidden="true"></span></a></nav></footer></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

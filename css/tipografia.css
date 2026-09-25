@@ -1,0 +1,36 @@
+/* Eskorte Latin desde el proyecto web de Adobe Fonts. */
+body h1, body h2, body h3, body h4, body h5, body h6,
+body .introduccion h1, body .reflexion-polar h2, body .cabecera h1,
+body .marca, body .titulo-interaccion {
+  font-family: "eskorte-latin", Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: normal;
+  text-transform: none;
+}
+/* Marca de la portada: negrita cursiva con luz difusa, como la referencia. */
+body.inicio .portada .marca {
+  font-family: "eskorte-latin", Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: normal;
+  color: #fff;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+  text-shadow: 0 0 5px rgba(255,255,255,.85), 0 0 16px rgba(190,226,255,.85), 0 0 34px rgba(104,171,255,.7);
+}
+
+/* Jerarquía de la referencia: primera línea grande y segunda más pequeña. */
+body.inicio .portada .introduccion #titulo{font-size:clamp(68px,6.2cqw,96px);line-height:1.02;letter-spacing:-.025em}
+#titulo .titulo-secundario{display:block;font-size:.66em;line-height:1.15;margin-top:.04em}
+
+/* Cuerpo, controles y navegación: Century Gothic Pro. */
+body, body.pantalla-original, body footer.navegacion-pantallas {
+  font-family: "century-gothic", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body p, body button, body input, body select, body textarea, body label {
+  font-family: "century-gothic", Arial, sans-serif;
+}
+

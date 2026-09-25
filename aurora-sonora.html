@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pulso Polar · Aurora sonora</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="css/aurora-sonora.css"><script defer src="js/aurora-sonora.js?v=10"></script></head>
+<body><header><a href="index.html">← Pulso Polar</a><span>EXPERIMENTO / SONIDO</span></header>
+<main><h1>el sonido se vuelve aurora</h1><p class="intro">En silencio, una línea. Con tu voz o tu música, curvas de luz.</p>
+<div class="escenario"><canvas id="aurora" aria-label="Aurora que cambia de amplitud con el sonido"></canvas><span class="estado-visual" id="modo">EN SILENCIO</span></div>
+<section class="controles" aria-label="Control de la aurora"><div class="acciones"><button id="microfono">Usar micrófono</button><label class="boton" for="archivo">Elegir audio<input id="archivo" type="file" accept="audio/*"></label><button id="demo">Probar movimiento</button><button id="detener">Detener</button></div>
+<p id="estado" role="status">Elige una fuente de sonido o prueba la demostración.</p>
+<audio id="audio" controls hidden></audio>
+<label class="sensibilidad" for="sensibilidad">Sensibilidad <input id="sensibilidad" type="range" min="0.5" max="5" step="0.1" value="2"><output id="ganancia">2.0×</output></label>
+<p class="nota">El micrófono se activa solo al pulsar el botón. El audio se procesa en tu navegador; no se graba ni se envía.</p></section></main></body></html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+/* Una vuelta en sentido horario cada 480 segundos, en el plano de la pantalla. */
+.inicio::before{background-position:center center}
+.escena-tierra{position:fixed;left:50%;top:50%;width:max(100vw,169.294606vh);height:max(100vh,59.068627vw);transform:translate(-50%,-50%);z-index:-1;pointer-events:none}
+.tierra-ventana{position:absolute;left:42%;top:12%;width:46%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:transparent;isolation:isolate;clip-path:circle(50%);-webkit-mask-image:radial-gradient(circle closest-side,#000 99.5%,transparent 100%);mask-image:radial-gradient(circle closest-side,#000 99.5%,transparent 100%)}
+.tierra-giro{position:absolute;inset:0;transform-origin:50% 50%;animation:girar-tierra 480s linear infinite}
+.tierra-giro img{position:absolute;display:block;width:165.012407%;max-width:none;height:auto;left:-31.885856%;top:-20.099256%}
+@keyframes girar-tierra{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.tierra-giro{animation:none}}
+
+
+
+/* Panel independiente: se extiende detrás del planeta, como en la referencia. */
+.escena-tierra::before{content:"";position:absolute;left:calc(50% - 44vw);top:12%;width:61vw;height:78%;border-radius:46px 0 0 0;background:rgba(43,29,91,.54)}
+.inicio .introduccion{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media(max-width:600px){.escena-tierra::before{display:none}.inicio .introduccion{background:rgba(43,29,91,.54)}}
+
+

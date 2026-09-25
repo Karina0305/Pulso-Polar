@@ -1,0 +1,41 @@
+/* Colores y composición inspirados en las dos referencias de Pulso Polar. */
+:root{color-scheme:dark;--amarillo:#fff600;--tinta:#12173f;--panel:rgba(24,25,66,.72);--pulso:#59ffc3;--duracion:2.2s;--amplitud:1.08;font-family:"Trebuchet MS",Arial,sans-serif;color:var(--amarillo);background:#101638}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;position:relative;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:#131c49 url("../assets/cosmos.png") center center/cover no-repeat}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,12,40,.7),transparent 45%);pointer-events:none}
+a{color:inherit}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}a,button{touch-action:manipulation}button{cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid white;outline-offset:7px}
+.panel{background:var(--panel);border-radius:40px;padding:32px 38px;backdrop-filter:blur(8px)}
+p{line-height:1.55;margin:0}h1,h2{margin:0}h2{font-size:1.1rem;font-weight:400;margin-bottom:12px}
+.etiqueta{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400}
+.portada{min-height:calc(100svh - 76px);position:relative;display:flex;align-items:center;padding:7vh 6vw}
+.introduccion{width:43%;padding:42px;position:relative;background:linear-gradient(120deg,rgba(24,25,66,.8),rgba(24,25,66,.62))}
+.introduccion h1{font-size:clamp(2.3rem,3.5vw,4.4rem);line-height:1.05;letter-spacing:-.035em;margin:25px 0 28px}
+.texto-principal{font-size:clamp(1.1rem,1.6vw,1.8rem);font-weight:500;line-height:1.45}
+.invitacion{font-size:clamp(1rem,1.1vw,1.3rem);margin-top:30px}
+.enlace-texto{display:inline-flex;gap:25px;align-items:center;background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:6px;padding:8px 0;font-size:1rem}
+.introduccion .enlace-texto{margin-top:20px}
+.marca{position:absolute;left:51%;top:50%;transform:translateY(-50%) rotate(-3deg);color:#fff;display:grid;text-align:center;font-family:"Trebuchet MS",sans-serif;font-size:clamp(3.5rem,7vw,8rem);font-weight:400;line-height:1.1;letter-spacing:.1em;text-shadow:3px 5px 0 #08152b,-1px -1px 0 #08152b;pointer-events:none}
+.flecha{position:absolute;right:8%;top:10%;width:110px;height:62px;border-radius:50px;display:grid;place-items:center;text-decoration:none;background:rgba(47,228,184,.65);color:white;font-size:3.5rem;line-height:1;transition:background .2s,transform .2s}
+.flecha:hover{background:#0acda5;transform:translateX(5px)}
+.pie{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 6vw;font-size:.8rem;color:#edf3ff;min-height:76px}
+.pie nav{display:flex;gap:12px}.pie nav a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;text-decoration:none;border:1px solid #ffffff50}.pie nav a[aria-current]{background:var(--amarillo);color:var(--tinta);border-color:var(--amarillo)}
+.experiencia::before{transform:scaleX(-1)}
+.experiencia::after{background:linear-gradient(0deg,rgba(8,12,40,.85),rgba(8,12,40,.15))}
+.cabecera{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 5vw;background:rgba(12,17,48,.48)}
+.cabecera h1{font-size:1.05rem;font-weight:400}.volver{text-decoration:none;font-size:1.1rem}
+.escena{display:grid;grid-template-columns:1.1fr 1fr;gap:28px 8vw;padding:30px 5vw;max-width:1800px;margin:auto}
+.explicacion{align-self:start;font-size:clamp(1rem,1.35vw,1.4rem)}
+.datos{justify-self:end;width:100%;max-width:490px}.datos dl{margin:0;font-size:1.05rem;line-height:1.6}.datos dl div{display:flex;gap:8px}.datos dt{flex-shrink:0}.datos dd{margin:0}.datos h2{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em}.fuente{font-size:.95rem;margin-top:6px}.estado{font-size:.875rem;margin:12px 0;color:#fff}
+.boton{background:rgba(255,255,255,.06);border:1px solid #fff60080;color:var(--amarillo);padding:10px 18px;border-radius:30px;font-size:.875rem;min-height:42px}.boton:hover{background:#fff60020}.boton:disabled{opacity:.5;cursor:wait}
+.interaccion{grid-column:2;grid-row:2 / span 2;text-align:center;align-self:center}
+.latido{width:clamp(145px,15vw,250px);margin:0 auto;filter:drop-shadow(0 0 25px var(--pulso));animation:latir var(--duracion) ease-in-out infinite;animation-play-state:paused}
+.corazon{width:100%;display:block;fill:var(--pulso);transition:fill .5s}.lectura{display:grid;gap:8px;justify-items:center;padding:8px 0 22px;color:#fff}.lectura>span{letter-spacing:.12em;font-size:.875rem}.lectura button{font-size:.8rem}
+.interpretacion{text-align:left;font-size:1rem}.interpretacion h2{margin-bottom:4px}
+.simulador{grid-column:1;grid-row:3;max-width:500px;align-self:end;margin-top:60px}.simulador label{display:flex;justify-content:space-between;font-size:1.05rem}.simulador output{font-weight:bold}.simulador input{width:100%;accent-color:var(--amarillo);margin:20px 0 10px;cursor:pointer;min-height:24px}.escala{display:flex;justify-content:space-between;font-size:.8rem}.simulador p{font-size:.875rem;margin:16px 0;color:#f0f0ff}
+@keyframes latir{0%,100%{transform:scale(1)}20%{transform:scale(var(--amplitud))}35%{transform:scale(1)}50%{transform:scale(var(--amplitud))}70%{transform:scale(1)}}
+@media(min-width:1600px){.portada{padding-top:10vh;padding-bottom:10vh}.introduccion{padding:55px}.escena{padding-top:55px}}
+@media(max-width:900px){.introduccion{width:52%;padding:28px}.introduccion h1{font-size:2.5rem}.marca{left:57%;font-size:5.5vw}.escena{gap:24px;padding:24px}.panel{padding:25px;border-radius:28px}.simulador{margin-top:10px}.cabecera{padding:22px 24px}.cabecera .etiqueta{display:none}}
+@media(max-width:600px){body::before{background-position:62% center}.portada{display:flex;flex-direction:column;padding:28px 20px;min-height:auto;gap:25px}.introduccion{width:100%;order:2}.introduccion h1{font-size:2.6rem}.texto-principal{font-size:1.12rem}.invitacion{margin-top:22px}.marca{position:relative;left:auto;top:auto;transform:rotate(-3deg);font-size:3.8rem;margin:45px 0 15px;order:1}.flecha{right:22px;top:16px;width:68px;height:43px;font-size:2.5rem}.pie{padding:20px;align-items:flex-end}.pie>span{max-width:70%;line-height:1.5}.escena{display:flex;flex-direction:column;padding:20px;gap:20px}.datos{max-width:none}.interaccion{display:flex;flex-direction:column;padding-top:10px}.latido{width:180px}.simulador{max-width:none;margin-top:0}.cabecera{padding:18px 20px}.cabecera h1{font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}

@@ -1,0 +1,4 @@
+Tierra de la segunda pantalla: editada con la herramienta integrada ImageGen.
+Prompt: Use case: background-extraction. Edit target: attached Earth illustration. Remove only the pale cream paper background outside the globe. Deliver real transparent alpha PNG, no checkerboard, no white matte, no shadow. Preserve the globe's detailed painterly texture, vivid blue oceans, green and ochre continents, white ice and clouds, and exact orientation (north at top, Antarctica at bottom). Keep the entire globe intact, centered with small equal transparent margin on a square canvas for CSS 2D rotation. Do not add text, change geography, or remove white ice inside globe.
+Archivo: assets/tierra-polos.png
+El botón cambia el hemisferio ilustrado con un giro 2D de 180 grados. La aurora sonora conserva la señal elegida; no representa mediciones locales por polo.
